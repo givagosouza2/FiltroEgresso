@@ -38,7 +38,7 @@ def extrair_egressos(pdf_file):
 
         texto = texto.replace("\r", "\n")
 
-        nomes = re.findall(r"Egresso:\s*(.+)", texto)
+        nomes = re.findall(r"^Egresso:\s*(.+)", texto, re.MULTILINE)
         anos = re.findall(r"Ano do Egresso:\s*(\d{4})", texto)
         niveis = re.findall(r"Nível:\s*([A-Za-zÀ-ÿ]+)", texto)
 
